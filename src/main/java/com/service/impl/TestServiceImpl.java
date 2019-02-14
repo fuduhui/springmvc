@@ -55,6 +55,7 @@ public class TestServiceImpl implements ITestService {
         purchaseDao.insertPurchase(purchase);
     }
 
+    //以编程方式控制事务
      /* public void insertWithNoTrans(Emp emp, Purchase purchase) {
         DefaultTransactionDefinition def = new DefaultTransactionDefinition();
         def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);

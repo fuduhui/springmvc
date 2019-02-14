@@ -3,6 +3,7 @@ package com.dao;
 import com.model.Emp;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.PostConstruct;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -33,13 +34,8 @@ public class TestDao {
         return list;
     }
 
-
-
-    static{
-        initDb();
-    }
-
-    public static void initDb() {
+    @PostConstruct//表示初始化之后会调用这个方法
+    public  void initDb() {
          Connection con;
          String driver = "com.mysql.jdbc.Driver";
          String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong";
@@ -52,8 +48,6 @@ public class TestDao {
             if(!con.isClosed()){
                 System.out.println("Succeeded connecting to the Database!");
             }
-
-
         } catch(Exception e) {
             System.out.println("Sorry,can`t find the Driver!");
             e.printStackTrace();
