@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Transactional
 public class TestServiceImpl implements ITestService {
 
     @Resource
@@ -47,8 +46,8 @@ public class TestServiceImpl implements ITestService {
         return empDao.getEmp(param);
     }
 
-   @Transactional(propagation= Propagation.REQUIRED,rollbackFor=Exception.class)
-    public void insertWithNoTrans(Emp emp, Purchase purchase) throws Exception {
+  @Transactional(propagation= Propagation.REQUIRED,rollbackFor=Exception.class)
+  public void insertWithNoTrans(Emp emp, Purchase purchase) throws Exception {
         int k=0;
         empDao.insertEmp(emp);
         int j=5/k;
@@ -56,7 +55,7 @@ public class TestServiceImpl implements ITestService {
     }
 
     //以编程方式控制事务
-     /* public void insertWithNoTrans(Emp emp, Purchase purchase) {
+    /*  public void insertWithNoTrans(Emp emp, Purchase purchase) {
         DefaultTransactionDefinition def = new DefaultTransactionDefinition();
         def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
 
