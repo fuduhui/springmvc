@@ -27,18 +27,6 @@ public class TestController {
 
 
 
-    @RequestMapping(value = "/queryDb")
-    @ResponseBody
-    public List<Emp> queryDb() {
-        try {
-            List<Emp> list= testService.test();
-            return list;
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     @RequestMapping(value = "/queryDbByMybatis")
     @ResponseBody
     public Emp queryDbByMybatis(String name) {

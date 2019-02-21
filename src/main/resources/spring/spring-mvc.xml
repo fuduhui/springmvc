@@ -21,7 +21,8 @@
 
     <mybatis:scan base-package="com.dao" />
 
-    <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean id="defaultViewResolver"
+       class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/"/>
         <property name="suffix" value=".jsp"/>

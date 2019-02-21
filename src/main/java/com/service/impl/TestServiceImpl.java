@@ -2,7 +2,6 @@ package com.service.impl;
 
 import com.dao.EmpDao;
 import com.dao.PurchaseDao;
-import com.dao.TestDao;
 import com.model.Emp;
 import com.model.Purchase;
 import com.service.ITestService;
@@ -23,9 +22,6 @@ import java.util.Map;
 public class TestServiceImpl implements ITestService {
 
     @Resource
-    private TestDao testDao;
-
-    @Resource
     private EmpDao empDao;
 
     @Resource
@@ -34,10 +30,7 @@ public class TestServiceImpl implements ITestService {
     @Resource
     private DataSourceTransactionManager  txManager;
 
-    @Override
-    public List<Emp> test() throws Exception {
-        return testDao.listEmp();
-    }
+
 
     @Override
     public Emp getEmp(String name) throws Exception {
