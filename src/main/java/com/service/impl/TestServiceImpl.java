@@ -40,15 +40,15 @@ public class TestServiceImpl implements ITestService {
     }
 
   @Transactional(propagation= Propagation.REQUIRED,rollbackFor=Exception.class)
-  public void insertWithNoTrans(Emp emp, Purchase purchase) throws Exception {
-        int k=1;
+  public void testTrans(Emp emp, Purchase purchase) throws Exception {
+        int k=0;
         empDao.insertEmp(emp);
         int j=5/k;
         purchaseDao.insertPurchase(purchase);
     }
 
     //以编程方式控制事务
-    /*  public void insertWithNoTrans(Emp emp, Purchase purchase) {
+   /*  public void testTrans(Emp emp, Purchase purchase) {
         DefaultTransactionDefinition def = new DefaultTransactionDefinition();
         def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
 

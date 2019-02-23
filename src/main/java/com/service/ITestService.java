@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ITestService {
     public Emp getEmp(String name) throws Exception;
-    public void insertWithNoTrans(Emp emp, Purchase purchase) throws Exception;
+    public void testTrans(Emp emp, Purchase purchase) throws Exception;
 }

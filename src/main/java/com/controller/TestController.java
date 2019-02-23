@@ -50,7 +50,7 @@ public class TestController {
             Purchase purParam=new Purchase();
             purParam.setName(purName);
             purParam.setMoney(money);
-            testService.insertWithNoTrans(empParam,purParam);
+            testService.testTrans(empParam,purParam);
             return "success";
         }catch (Exception e){
             e.printStackTrace();
